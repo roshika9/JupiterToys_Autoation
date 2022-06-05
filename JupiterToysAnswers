@@ -1,0 +1,42 @@
+
+1.What other possible scenario’s would you suggest for testing the Jupiter Toys application? 
+
+1.	User who is having valid user credentials can logs in to the system successfully
+2.	Validate logging page fields
+3.	Verify checkout from cart
+4.	Verify remove items from cart 
+5.	Verify clear Cart
+
+2. Jupiter Toys is expected to grow and expand its offering into books, tech, and modern art. We are expecting the of tests will grow to a very large number. 
+1. What approaches could you used to reduce overall execution time? 
+Parallel test execution
+Schedule test cases to run at off peak time
+Reduce the code complexity for fast execution
+User headless execution
+Do not use unnecessary wait times in the code
+Test segregation	
+Introduce Continues Integration tools
+
+2. How will your framework cater for this? 
+
+Use a CI tool like Jenkins
+I use cypress so nor using arbitrary timeouts; Cypress has automatic retry mechanism
+ Avoiding using xpaths; it is slower than other attributes
+Run testcases in headless mode
+Use parallel execution
+Schedule to run test cases in off peak time 
+
+3. Describe when to use a BDD approach to automation and when NOT to use BDD 
+
+When to use BDD
+	When need to separate test scripts from the test code
+When need to onboard easily to automate the code
+When need to take place easier reviews
+When the project needs to have a good project structure 
+When needs to avoid code duplication and practice high code reusability
+
+When not to use BDD
+	When teams are not much focusing on maintenance
+	When there are lot of feature files to run parallel – difficult to run lot of feature files
+	BDD automation too create extra dependencies, when we need to use minimal dependencies, BDD should not be used.
+ 
