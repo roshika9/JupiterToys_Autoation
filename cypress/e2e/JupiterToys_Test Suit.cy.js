@@ -50,8 +50,8 @@ describe("Jupiter Toys Test suit", function () {
         ShopPage.ClickOnShopItem(SelectionValues.funnycow);
         ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
         CartPage.NavigateCart();
-        CartPage.GetProductName(SelectionValues.funnycow, 1, 2);
-        CartPage.GetProductName(SelectionValues.fluffybunny, 2, 1);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.funnycow, 1, 2);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.fluffybunny, 2, 1);
     });
 
     it("Testcase 4 - Verify the total of shopping items", function () {
@@ -76,7 +76,7 @@ describe("Jupiter Toys Test suit", function () {
         CartPage.VerifyProductSubTotal(1);
         CartPage.VerifyProductSubTotal(2);
         CartPage.VerifyProductSubTotal(3);
-        VerifyCartTotal();
+        CartPage.VerifyCartTotal();
     });
 
 
