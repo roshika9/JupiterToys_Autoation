@@ -38,21 +38,25 @@ function Contact_Page() {
 	//Validate Contact page errors
 	this.ValidateHeadereErrorMessage = function (headererrormessage) {
 
-		BasePage.WaitForElementPresent(uielementHeaderMessage, headererrormessage);
+		BasePage.WaitForElementPresent(uielementHeaderMessage);
+		cy.get(uielementHeaderMessage).should('contain.text',headererrormessage);
 	}
 
 	this.ValidateForenameErrorMessage = function (forenameerrormessage) {
 
-		BasePage.WaitForElementPresent(uielementForenameMessage, forenameerrormessage);
+		BasePage.WaitForElementPresent(uielementForenameMessage);
+		cy.get(uielementForenameMessage).should('contain.text',forenameerrormessage);
 	}
 
 	this.ValidateEmailErrorMessage = function (emailerrormessage) {
 
-		BasePage.WaitForElementPresent(uielementEmailMessage, emailerrormessage);
+		BasePage.WaitForElementPresent(uielementEmailMessage);
+		cy.get(uielementEmailMessage).should('contain.text',emailerrormessage);
 	}
 	this.ValidateMessageErrorMessage = function (messageerror) {
 
-		BasePage.WaitForElementPresent(uielementMessageError, messageerror);
+		BasePage.WaitForElementPresent(uielementMessageError);
+		cy.get(uielementMessageError).should('contain.text',messageerror);
 	}
 
 	this.AddMandatoryValues = function (forename, email, message) {
@@ -66,7 +70,8 @@ function Contact_Page() {
 
 
 	this.VerifyNoValidationErrors = function (headermessage) {
-		BasePage.WaitForElementPresent(uielementHeaderMessage, headermessage)
+		BasePage.WaitForElementPresent(uielementHeaderMessage)
+		cy.get(uielementHeaderMessage).should('contain.text',headermessage);
 		BasePage.CheckElementNotPresent(uielementForenameMessage);
 		BasePage.CheckElementNotPresent(uielementEmailMessage);
 		BasePage.CheckElementNotPresent(uielementMessageError);
@@ -77,7 +82,8 @@ function Contact_Page() {
 	}
 
 	this.FormSuccessfullySubmittedMessage = function (headersuccessmessage) {
-		BasePage.WaitForElementPresent(uielementHeaderMessage, headersuccessmessage)
+		BasePage.WaitForElementPresent(uielementHeaderMessage)
+		cy.get(uielementHeaderMessage).should('contain.text',headersuccessmessage);
 	}
 
 

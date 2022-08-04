@@ -21,36 +21,37 @@ function Shop_Page() {
 	}
 
 	//Add shop items to cart
-	this.ClickOnShopItem = function (item,clicknumber) {
-
-		switch (item) {
-			case 'Teddy Bear':
-				BasePage.Click(btnProduct1Buy);
-				break;
-			case 'Stuffed Frog':
-				BasePage.Click(btnProduct2Buy);
-				break;
-			case 'Handmade Doll':
-				BasePage.Click(btnProduct3Buy);
-				break;
-			case 'Fluffy Bunny':
-				BasePage.Click(btnProduct4Buy);
-				break;
-			case 'Smiley Bear':
-				BasePage.Click(btnProduct5Buy);
-				break;
-			case 'Funny Cow':
-				BasePage.Click(btnProduct6Buy);
-				break;
-			case 'Valentine Bear':
-				BasePage.Click(btnProduct7Buy);
-				break;
-			case 'Smiley Face':
-				BasePage.Click(btnProduct8Buy);
+	this.ClickOnShopItem = function (item, clicknumber) {
+		for (let i = 1; clicknumber >= i; i++) {
+			switch (item) {
+				case 'Product-1':
+					BasePage.Click(btnProduct1Buy);
+					break;
+				case 'Product-2':
+					BasePage.Click(btnProduct2Buy);
+					break;
+				case 'Product-3':
+					BasePage.Click(btnProduct3Buy);
+					break;
+				case 'Product-4':
+					BasePage.Click(btnProduct4Buy);
+					break;
+				case 'Product-5':
+					BasePage.Click(btnProduct5Buy);
+					break;
+				case 'Product-6':
+					BasePage.Click(btnProduct6Buy);
+					break;
+				case 'Product-7':
+					BasePage.Click(btnProduct7Buy);
+					break;
+				case 'Product-8':
+					BasePage.Click(btnProduct8Buy);
 			}
+		}
 	}
 
-	
+
 
 
 

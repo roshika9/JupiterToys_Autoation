@@ -16,14 +16,25 @@ function SelectionValues() {
 
     //Shop Items
 
-    this.teddybear = "Teddy Bear";
-    this.stuffedfrog = "Stuffed Frog";
-    this.handmadedoll = "Handmade Doll";
-    this.fluffybunny = "Fluffy Bunny";
-    this.smileybear = "Smiley Bear";
-    this.funnycow = "Funny Cow";
-    this.valentinebear = "Valentine Bear";
-    this.smileyface = "Smiley Face";
+    this.teddybear = "Product-1";
+    this.stuffedfrog = "Product-2";
+    this.handmadedoll = "Product-3";
+    this.fluffybunny = "Product-4";
+    this.smileybear = "Product-5";
+    this.funnycow = "Product-6";
+    this.valentinebear = "Product-7";
+    this.smileyface = "Product-8";
+
+    //Product names 
+
+    this.teddybearname = "Teddy Bear";
+    this.stuffedfrogname = "Stuffed Frog";
+    this.handmadedollname = "Handmade Doll";
+    this.fluffybunnyname = "Fluffy Bunny";
+    this.smileybearname = "Smiley Bear";
+    this.funnycowname = "Funny Cow";
+    this.valentinebearname = "Valentine Bear";
+    this.smileyfacename = "Smiley Face";
 
     //product Prices
     this.stuffedfrogPrice = "$10.99";

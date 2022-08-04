@@ -15,15 +15,11 @@ describe("Jupiter Toys Test suit", function () {
 
     });
 
-    afterEach(function () {
-        //to be added     
-    });
-
     it("Testcase 1 - Validate Contact form", function () {
         ContactPage.NavigateContactPage();
         ContactPage.ClickOnSubmit();
         ContactPage.ValidateHeadereErrorMessage(SelectionValues.headererrormessage);
-        ContactPage.ValidateForenameErrorMessage(SelectionValues.forenamemessage);
+        ContactPage.ValidateForenameErrorMessage(SelectionValues.forenameerrormessage);
         ContactPage.ValidateEmailErrorMessage(SelectionValues.emailerrormessage);
         ContactPage.ValidateMessageErrorMessage(SelectionValues.messageerrormessage);
         ContactPage.AddMandatoryValues(SelectionValues.forenametxt, SelectionValues.emailtxt, SelectionValues.messagetxt);
@@ -37,39 +33,29 @@ describe("Jupiter Toys Test suit", function () {
             ContactPage.AddMandatoryValues(SelectionValues.forenametxt, SelectionValues.emailtxt, SelectionValues.messagetxt);
             ContactPage.VerifyNoValidationErrors(SelectionValues.headermessage);
             ContactPage.ClickOnSubmit();
-            //  ContactPage.WaitForLoaderDismiss();
-            ContactPage.FormSuccessfullySubmittedMessage(SelectionValues.FormSuccessfullySubmittedMessage);
+            ContactPage.FormSuccessfullySubmittedMessage(SelectionValues.headersuccessmessage);
 
         });
     });
 
     it("Testcase 3 - Verify items in the cart", function () {
         ShopPage.NavigateShopPage();
-        //Update below methoud to add number of times
-        ShopPage.ClickOnShopItem(SelectionValues.funnycow);
-        ShopPage.ClickOnShopItem(SelectionValues.funnycow);
-        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
+        ShopPage.ClickOnShopItem(SelectionValues.funnycow,2);
+        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny,1);
         CartPage.NavigateCart();
-        CartPage.ValidateProductNameandQuantity(SelectionValues.funnycow, 1, 2);
-        CartPage.ValidateProductNameandQuantity(SelectionValues.fluffybunny, 2, 1);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.funnycowname, 1, 2);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.fluffybunnyname, 2, 1);
     });
 
     it("Testcase 4 - Verify the total of shopping items", function () {
         ShopPage.NavigateShopPage();
-        ShopPage.ClickOnShopItem(SelectionValues.stuffedfrog);
-        ShopPage.ClickOnShopItem(SelectionValues.stuffedfrog);
-        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
-        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
-        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
-        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
-        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny);
-        ShopPage.ClickOnShopItem(SelectionValues.valentinebear);
-        ShopPage.ClickOnShopItem(SelectionValues.valentinebear);
-        ShopPage.ClickOnShopItem(SelectionValues.valentinebear);
+        ShopPage.ClickOnShopItem(SelectionValues.stuffedfrog,2);
+        ShopPage.ClickOnShopItem(SelectionValues.fluffybunny,5);
+        ShopPage.ClickOnShopItem(SelectionValues.valentinebear,3);
         CartPage.NavigateCart();
-        CartPage.ValidateProductNameandQuantity(SelectionValues.stuffedfrog, 1, 2);
-        CartPage.ValidateProductNameandQuantity(SelectionValues.fluffybunny, 2, 5);
-        CartPage.ValidateProductNameandQuantity(SelectionValues.valentinebear, 3, 3);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.stuffedfrogname, 1, 2);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.fluffybunnyname, 2, 5);
+        CartPage.ValidateProductNameandQuantity(SelectionValues.valentinebearname, 3, 3);
         CartPage.VerifyProductPrice(SelectionValues.stuffedfrogPrice, 1);
         CartPage.VerifyProductPrice(SelectionValues.fluffybunnyPrice, 2);
         CartPage.VerifyProductPrice(SelectionValues.valentinebearPrice, 3);

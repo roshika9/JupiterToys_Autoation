@@ -34,7 +34,7 @@ function Cart_Page() {
         var productquantity = ':nth-child(' + order + ') > :nth-child(3) > .input-mini';
 
 
-        var calProductSubTotal = cy.get(productPrice)
+        cy.get(productPrice)
             .invoke('text')
             .then(text => +text.replace('$', '').trim())
             .then(price => {
@@ -46,9 +46,7 @@ function Cart_Page() {
                             .invoke('text')
                             .then(text => +text.replace('$', '').trim())
                             .then(parseFloat)
-                            .then(subTotal => {
-
-                            }).should('eq', (price * quantity));
+                            .should('eq', (price * quantity));
                     });
             });
     }
